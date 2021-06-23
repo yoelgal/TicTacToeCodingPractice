@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: rgb(41, 41, 41);
+  background-image: linear-gradient(to top left, #b9b8c7 0%, #4660f1 100%);
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: fixed;
+  width: 50rem;
+  height: 10rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  margin-top: 15rem;
+}
+
+.byYoel {
+  position: fixed;
+  font-size: medium;
+  right: 130px;
+  top: 100px;
+}
+
+.player {
+  flex: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.name {
+  position: relative;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.unused {
+  opacity: 60%;
+}
+
+.unused:hover {
+  opacity: 100%;
+}
+
+.score {
+  font-size: 25px;
+  font-weight: 300;
+  color: #012e83;
+  margin-bottom: auto;
+}
+
+.btn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn--new {
+  bottom: 30px;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.player--winner .score {
+  color: #ffffff;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon {
+  height: 150px;
+  padding: 20px;
+}
+
+.title {
+  margin-top: 15px;
+  align-items: center;
+  position: fixed;
+
+  height: 10rem;
+  font-size: 10rem;
+  font-weight: 250;
+}
+
+/* ICONS */
+
+#c1 {
+  position: absolute;
+  top: 27rem;
+  left: 36%;
+}
+
+#c2 {
+  position: fixed;
+  top: 27rem;
+  align-self: center;
+}
+
+#c3 {
+  position: absolute;
+  top: 27rem;
+  right: 36%;
+}
+
+#c4 {
+  position: absolute;
+  top: 40rem;
+  left: 36%;
+}
+
+#c5 {
+  position: fixed;
+  top: 40rem;
+  align-self: center;
+}
+
+#c6 {
+  position: absolute;
+  top: 40rem;
+  right: 36%;
+}
+
+#c7 {
+  position: absolute;
+  top: 53rem;
+  left: 36%;
+}
+
+#c8 {
+  position: fixed;
+  top: 53rem;
+  align-self: center;
+}
+
+#c9 {
+  position: absolute;
+  top: 53rem;
+  right: 36%;
+}
+
+/* NOUGHTS */
+
+#n1 {
+  position: absolute;
+  top: 27rem;
+  left: 36%;
+}
+
+#n2 {
+  position: absolute;
+  top: 27rem;
+  align-self: center;
+}
+
+#n3 {
+  position: absolute;
+  top: 27rem;
+  right: 36%;
+}
+
+#n4 {
+  position: absolute;
+  top: 40rem;
+  left: 36%;
+}
+
+#n5 {
+  position: absolute;
+  top: 40rem;
+  align-self: center;
+}
+
+#n6 {
+  position: absolute;
+  top: 40rem;
+  right: 36%;
+}
+
+#n7 {
+  position: absolute;
+  top: 53rem;
+  left: 36%;
+}
+
+#n8 {
+  position: absolute;
+  top: 53rem;
+  align-self: center;
+}
+
+#n9 {
+  position: absolute;
+  top: 53rem;
+  right: 36%;
+}
+
+/* LINES*/
+
+#l4 {
+  position: fixed;
+  height: 450px;
+  top: 120px;
+  align-self: center;
+}
+
+#l5 {
+  position: fixed;
+  height: 450px;
+  top: 250px;
+  align-self: center;
+}
+
+#l6 {
+  position: absolute;
+  height: 450px;
+  top: 380px;
+  align-self: center;
+}
+
+#l1 {
+  position: fixed;
+  width: 400px;
+  top: 275px;
+  left: 393px;
+}
+
+#l2 {
+  position: fixed;
+  width: 400px;
+  top: 275px;
+  align-self: center;
+}
+
+#l3 {
+  position: fixed;
+  width: 400px;
+  top: 275px;
+  right: 393px;
+}
+
+#l8 {
+  position: absolute;
+  width: 410px;
+  align-self: center;
+  top: 275px;
+}
+
+#l7 {
+  position: fixed;
+  width: 410px;
+  right: 505px;
+  top: 275px;
+}
+
+/* INACTIVE */
+#u1 {
+  position: absolute;
+  top: 285px;
+  left: 36.75%;
+  height: 120px;
+}
+
+#u2 {
+  position: absolute;
+  top: 285px;
+  align-self: center;
+  height: 120px;
+}
+
+#u3 {
+  position: absolute;
+  top: 285px;
+  right: 36.75%;
+  height: 120px;
+}
+
+#u4 {
+  position: absolute;
+  top: 415px;
+  left: 36.75%;
+  height: 120px;
+}
+
+#u5 {
+  position: absolute;
+  top: 415px;
+  align-self: center;
+  height: 120px;
+}
+
+#u6 {
+  position: absolute;
+  top: 415px;
+  right: 36.75%;
+  height: 120px;
+}
+
+#u7 {
+  position: absolute;
+  top: 545px;
+  left: 36.75%;
+  height: 120px;
+}
+
+#u8 {
+  position: absolute;
+  top: 545px;
+  align-self: center;
+  height: 120px;
+}
+
+#u9 {
+  position: absolute;
+  top: 545px;
+  right: 36.75%;
+  height: 120px;
+}
